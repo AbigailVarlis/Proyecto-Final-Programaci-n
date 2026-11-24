@@ -1,0 +1,5 @@
+El aprendizaje automático y el procesamiento de lenguaje natural son áreas fascinantes de la inteligencia artificial. Muchos estudiantes disfrutan programar en Python porque es un lenguaje claro, versátil y muy poderoso.
+
+Sin embargo, limpiar textos reales puede ser un reto difícil y frustrante cuando hay signos de puntuación, números o palabras vacías. A pesar de los errores iniciales, resolver cada problema técnico resulta gratificante y excelente para mejorar la lógica.
+
+En conclusión, practicar con proyectos pequeños pero bien estructurados es una gran estrategia para dominar el análisis de datos y la programación modular.
