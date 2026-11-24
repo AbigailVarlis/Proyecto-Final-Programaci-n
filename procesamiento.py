@@ -1,7 +1,5 @@
-def leer_texto():
-    with open("prueba.txt","r", encoding="UTF-8") as archivo:
-        texto = archivo.read()
-        return texto
+with open("prueba.txt","r") as archivo:
+    texto = archivo.read()
         
 def conteo_pal_char(texto):
     palabras = len(texto.split())
@@ -10,10 +8,18 @@ def conteo_pal_char(texto):
     
     return ( f"Palabras: {palabras} | "
             f"Caracteres (con espacios): {char_esp} | "
-            f"Caracteres (sin espacios): {char_sinesp}"
-            )
+            f"Caracteres (sin espacios): {char_sinesp}" )
 
-print(conteo_pal_char(leer_texto()))
+def conteo_oraciones(texto):
+    oraciones = 0
+    for char in texto:
+        if char in "!.?":
+            oraciones += 1
+    return f"Oraciones: {oraciones}"
+
+    
+
+print(conteo_oraciones(texto))
     
 
 
