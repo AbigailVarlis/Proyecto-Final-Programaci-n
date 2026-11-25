@@ -1,10 +1,18 @@
 import auxiliar
+
 ruta = auxiliar.seleccionar_archivo()
 
 with open(ruta,"r") as file:
     texto = file.read()
 
-        
+def texto_limpio(texto: str) -> str:
+    texto_min = texto.lower()
+    texto_limp = texto_min
+    for i in texto_min: 
+        if i in ",.:;¡!¿?":
+            texto_limp = texto_limp.replace(i, "")
+    return texto_limp
+
 def conteo_pal(texto: str) -> int:
     no_palabras = len(texto.split())
     return no_palabras
@@ -25,22 +33,18 @@ def conteo_oraciones(texto: str) -> int:
     return oraciones
 
 def prom_pal(texto: str) -> int:
-    palabras = texto.split()
+    palabras = texto_limpio(texto).split()
     caracteres = 0
     for palabra in palabras:
-        for i in palabra:
-            palabra_limpia = palabra
-            if i in ".,:,¡!¿?":
-                palabra_limpia = palabra_limpia.replace(i,"")
-            caracteres += len(palabra_limpia)
-    prom_p = caracteres // len(palabras)
-    return prom_p
+        caracteres += len(palabra)
+    prom_p = caracteres / len(palabras)
+    return  round(prom_p,2)
 
 def prom_orac(texto: str) -> int:
     palabras = texto.split()
     oraciones = conteo_oraciones(texto)
-    prom_o = len(palabras) // oraciones
-    return prom_o
+    prom_o = len(palabras) / oraciones
+    return round(prom_o,2)
     
 
 print( f"Total de palabras: {conteo_pal(texto)}\n"
@@ -52,6 +56,6 @@ print( f"Total de palabras: {conteo_pal(texto)}\n"
     
 
 
-    
+
 
 
