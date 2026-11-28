@@ -1,10 +1,4 @@
-import auxiliar
-
-ruta = auxiliar.seleccionar_archivo()
-
-with open(ruta,"r") as file:
-    texto = file.read()
-    
+   
 stop_words = {"el","la","y","en","a","de","ni","o","u","los","las","sino",
               "que","pero","más","muy","es","un","para","con","sin","son","una",
               "uno","por","al","del","se","su","sus","lo","embargo","hay","cada"}
@@ -13,7 +7,7 @@ def texto_limpio(texto: str) :
     texto_min = texto.lower()
     texto_limp = texto_min
     for i in texto_min: 
-        if i in ",.:;¡!¿?":
+        if i in ",.:;¡!¿?()":
             texto_limp = texto_limp.replace(i, "")
     return texto_limp
 
@@ -52,5 +46,3 @@ def top5_pal(texto: str) :
     
     return texto_final
 
-print(f"TTR: {ttr(texto)}%\n"
-      f"{top5_pal(texto)}")

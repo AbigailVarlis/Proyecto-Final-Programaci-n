@@ -1,10 +1,4 @@
-import auxiliar
-from dict import texto_limpio
-
-ruta = auxiliar.seleccionar_archivo()
-
-with open(ruta,"r") as file:
-    texto = file.read()
+from limpieza import texto_limpio
 
 
 def conteo_pal(texto: str) -> int:
@@ -39,14 +33,6 @@ def prom_orac(texto: str) -> int:
     oraciones = conteo_oraciones(texto)
     prom_o = len(palabras) / oraciones
     return round(prom_o,2)
-    
-
-print( f"Total de palabras: {conteo_pal(texto)}\n"
-    f"Caracteres con espacios: {conteo_char_esp(texto)}\n"
-    f"Caracteres sin espacios: {conteo_char_noesp(texto)}\n"
-    f"Total de oraciones: {conteo_oraciones(texto)}\n"
-    f"Longitud promedio de palabra: {prom_pal(texto)}\n"
-    f"Longitud promedio de oración: {prom_orac(texto)}" )
     
 
 

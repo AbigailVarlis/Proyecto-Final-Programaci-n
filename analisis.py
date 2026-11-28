@@ -1,5 +1,4 @@
-
-
+from limpieza import filtrado_stopwords
 
 polaridad = { # Positivas
     "excelente": 3, "increíble": 3, "fantástico": 3, "maravilloso": 3,
@@ -18,6 +17,16 @@ polaridad = { # Positivas
     "aburrido": -1, "confuso": -1, "complicado": -1,
     }
 
-def polaridad(texto: str) -> str :
+def polaridades(texto: str) -> str :
     puntaje = 0
-    if palabra in 
+    for palabra in filtrado_stopwords(texto):
+        if palabra in polaridad:
+            puntaje += polaridad[palabra]
+    if puntaje < 0:
+        sentimiento = "Negativo"
+    elif puntaje > 0:
+        sentimiento = "Positivo"
+    else: 
+        sentimiento = "Neutro"
+    return sentimiento, puntaje
+
