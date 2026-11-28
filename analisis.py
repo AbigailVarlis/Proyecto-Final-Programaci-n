@@ -17,7 +17,7 @@ polaridad = { # Positivas
     "aburrido": -1, "confuso": -1, "complicado": -1,
     }
 
-def polaridades(texto: str) -> str :
+def polaridades(texto: str) -> tuple:
     puntaje = 0
     for palabra in filtrado_stopwords(texto):
         if palabra in polaridad:

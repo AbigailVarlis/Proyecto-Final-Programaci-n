@@ -20,7 +20,7 @@ def conteo_oraciones(texto: str) -> int:
             oraciones += 1
     return oraciones
 
-def prom_pal(texto: str) -> int:
+def prom_pal(texto: str) -> float:
     palabras = texto_limpio(texto).split()
     caracteres = 0
     for palabra in palabras:
@@ -28,7 +28,7 @@ def prom_pal(texto: str) -> int:
     prom_p = caracteres / len(palabras)
     return  round(prom_p,2)
 
-def prom_orac(texto: str) -> int:
+def prom_orac(texto: str) -> float:
     palabras = texto.split()
     oraciones = conteo_oraciones(texto)
     prom_o = len(palabras) / oraciones
