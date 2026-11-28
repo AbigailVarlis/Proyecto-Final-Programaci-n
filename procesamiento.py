@@ -1,17 +1,11 @@
 import auxiliar
+from dict import texto_limpio
 
 ruta = auxiliar.seleccionar_archivo()
 
 with open(ruta,"r") as file:
     texto = file.read()
 
-def texto_limpio(texto: str) -> str:
-    texto_min = texto.lower()
-    texto_limp = texto_min
-    for i in texto_min: 
-        if i in ",.:;¡!¿?":
-            texto_limp = texto_limp.replace(i, "")
-    return texto_limp
 
 def conteo_pal(texto: str) -> int:
     no_palabras = len(texto.split())
